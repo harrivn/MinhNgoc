@@ -57,11 +57,10 @@ export default async function LeaderboardPage({
             <Link
               key={tab.key}
               href={`/leaderboard?period=${tab.key}${deckId ? `&deck=${deckId}` : ""}`}
-              className={`px-3.5 py-1.5 rounded-lg text-sm font-medium transition ${
-                period === tab.key
+              className={`px-3.5 py-1.5 rounded-lg text-sm font-medium transition ${period === tab.key
                   ? "bg-red-600 text-white"
                   : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
-              }`}
+                }`}
             >
               {tab.label}
             </Link>
@@ -73,11 +72,10 @@ export default async function LeaderboardPage({
       <div className="flex items-center gap-2 overflow-x-auto pb-1">
         <Link
           href={`/leaderboard?period=${period}`}
-          className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition ${
-            !deckId
+          className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition ${!deckId
               ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
               : "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800"
-          }`}
+            }`}
         >
           Tất cả bộ từ
         </Link>
@@ -85,11 +83,10 @@ export default async function LeaderboardPage({
           <Link
             key={d.id}
             href={`/leaderboard?period=${period}&deck=${d.id}`}
-            className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition ${
-              deckId === d.id
+            className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition ${deckId === d.id
                 ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
                 : "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800"
-            }`}
+              }`}
           >
             {d.name}
           </Link>
@@ -151,13 +148,12 @@ export default async function LeaderboardPage({
                       <span className="inline-flex items-center gap-1 font-bold">
                         {entry.rank_position <= 3 && (
                           <Medal
-                            className={`w-4 h-4 ${
-                              entry.rank_position === 1
+                            className={`w-4 h-4 ${entry.rank_position === 1
                                 ? "text-amber-500"
                                 : entry.rank_position === 2
-                                ? "text-slate-400"
-                                : "text-amber-700"
-                            }`}
+                                  ? "text-slate-400"
+                                  : "text-amber-700"
+                              }`}
                           />
                         )}
                         #{entry.rank_position}
@@ -165,7 +161,6 @@ export default async function LeaderboardPage({
                     </td>
                     <td className="py-3.5 px-4">
                       <div>{entry.display_name}</div>
-                      <div className="text-xs text-slate-400">@{entry.username}</div>
                     </td>
                     <td className="py-3.5 px-4 text-right">{entry.sessions_count}</td>
                     <td className="py-3.5 px-4 text-right">{entry.accuracy}%</td>
