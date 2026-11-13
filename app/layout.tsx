@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     "Website ôn tập từ vựng tiếng Trung HSK 1-6 với Flashcard, Trắc nghiệm, Điền từ, Phát âm chuẩn và Bảng xếp hạng.",
 };
 
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark',d);}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: {
@@ -26,6 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="vi" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className={`${inter.variable} ${notoSansSC.variable} font-sans min-h-screen`}>
         {children}
       </body>
